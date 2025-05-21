@@ -14,9 +14,9 @@ const Card = ({ header: headerNode, children, footer: footerNode, className, ...
   return (
     <div { ...intrinsic } className={ clsx(theme, style, className) }>
       <div className={ underlay } />
-      { header && <div className={ clsx(theme, header) }>{ headerNode }</div> }
+      { headerNode && <div className={ clsx(theme, header) }>{ headerNode }</div> }
       { children }
-      { footer && <div className={ clsx(theme, footer) }>{ footerNode }</div> }
+      { footerNode && <div className={ clsx(theme, footer) }>{ footerNode }</div> }
     </div>
   );
 };
