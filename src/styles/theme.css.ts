@@ -4,22 +4,18 @@ export const vars = createThemeContract({
   color: {
     background: null,
     surface: null,
-    surfaceGlass: null,
+    glass: null,
     primary: null,
-    primarySoft: null,
-    primaryGlow: null,
-    secondary: null,
-    secondaryGlow: null,
-    accent: null,
-    error: null,
-    warning: null,
-    outline: null,
+    glow: null,
     text: null,
+    textMuted: null,
+    danger: null,
   },
   borderRadius: {
-    small: null,
-    medium: null,
-    large: null,
+    sm: null,
+    md: null,
+    lg: null,
+    xl: null,
   },
   spacing: {
     xs: null,
@@ -29,7 +25,7 @@ export const vars = createThemeContract({
   },
   fontSize: {
     sm: null,
-    base: null,
+    md: null,
     lg: null,
     xl: null,
   },
@@ -37,24 +33,20 @@ export const vars = createThemeContract({
 
 export const theme = createTheme(vars, {
   color: {
-    background: "#0C0F0C",           // near-black
-    surface: "#141914",              // slightly lighter black/green mix
-    surfaceGlass: "rgba(16, 24, 16, 0.65)", // frosted dark green layer
-    primary: "#A4C639",              // Matrix glyph green
-    primarySoft: "#7CA529",          // dimmed green for borders or disabled
-    primaryGlow: "#A4C63933",        // 20% opacity for glows
-    secondary: "#5AA85F",            // desaturated green (muted, not neon)
-    secondaryGlow: "#5AA85F33",
-    accent: "#2F5E2F",               // deep green-gray (used for shadows or tertiary UI)
-    error: "#8A1E1E",                // deep crimson, if needed
-    warning: "#996600",              // muted amber-brown
-    outline: "#A4C63922",            // faint green for edges
-    text: "#B8E6B8",                 // soft neon text — readable but not blinding
+    background: "#0C0F0C",
+    surface: "#141914",
+    glass: "rgba(16, 24, 16, 0.65)",
+    primary: "#A4C639",
+    glow: "#A4C63933",
+    text: "#89B66F",
+    textMuted: "#5F774A",
+    danger: "#8A1E1E",
   },
   borderRadius: {
-    small: "0.25rem",
-    medium: "0.375rem",
-    large: "0.5rem",
+    sm: "0.25rem",
+    md: "0.375rem",
+    lg: "0.5rem",
+    xl: "0.75rem",
   },
   spacing: {
     xs: "0.25rem",
@@ -64,7 +56,7 @@ export const theme = createTheme(vars, {
   },
   fontSize: {
     sm: "0.875rem",
-    base: "1rem",
+    md: "1rem",
     lg: "1.25rem",
     xl: "1.5rem",
   },
