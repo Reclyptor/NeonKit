@@ -7,6 +7,6 @@ export default () => {
   const [confirmation] = useValue("Confirmation", { defaultValue: false });
 
   return (
-    <Button confirmation={ confirmation } size={ size } variant={ variant } style={{ width: "80px" }}>{ variant === "primary" ? "Accept" : "Reject" }</Button>
+    <Button confirmation={ confirmation } size={ size } variant={ variant } style={{ width: "fit-content" }}>{ variant === "primary" ? "Accept" : "Reject" }</Button>
   );
 };
