@@ -1,8 +1,9 @@
 import { style } from "@vanilla-extract/css";
 import { vars } from "~/styles/theme.css";
-import { shimmer, pulse } from "~/styles/keyframes.css";
+import { shimmer, pulse, timeout } from "~/styles/keyframes.css";
 
 export const button = style({
+  position: "relative",
   cursor: "pointer",
   borderRadius: "0.375rem",
 });
@@ -15,12 +16,9 @@ export const variants = {
     },
     variant: {
       primary: style({
-        position: "relative",
-        overflow: "hidden",
         color: vars.color.surface,
         background: vars.color.primary,
         border: "2px solid transparent",
-        borderRadius: "0.375rem",
         boxShadow: `0 0 0.25rem ${ vars.color.primary }80 inset`,
         transition: "background 0.2s ease, box-shadow 0.3s ease, transform 0.2s ease",
         selectors: {
@@ -55,7 +53,6 @@ export const variants = {
         background: "transparent",
         border: `2px solid ${ vars.color.primary }`,
         transition: "background 0.2s ease, transform 0.2s ease",
-
         selectors: {
           '&:hover': {
             background: `${ vars.color.primary }10`,
@@ -79,3 +76,41 @@ export const variants = {
     variant: "primary" as const,
   }
 };
+
+export const bar = style({
+  position: "absolute",
+  opacity: 0.6,
+  borderTopLeftRadius: "0.375rem",
+  borderBottomLeftRadius: "0.375rem",
+  backgroundColor: `${ vars.color.secondary }`,
+  animation: `${ timeout } 1500ms linear`,
+  pointerEvents: "none"
+});
+
+export const barVariants = {
+  variants: {
+    size: {
+      small: style({ fontSize: "0.875rem" }),
+      large: style({ fontSize: "1rem" })
+    },
+    variant: {
+      primary: style({
+        width: "calc(100% + 4px)",
+        height: "calc(100% + 4px)",
+        top: "-2px",
+        left: "-2px"
+      }),
+      secondary: style({
+        width: "100%",
+        height: "100%",
+        top: 0,
+        left: 0
+      })
+    }
+  }
+}
+
+export const content = style({
+  position: "relative",
+  zIndex: 1
+});
